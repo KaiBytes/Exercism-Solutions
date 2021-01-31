@@ -1,4 +1,0 @@
-exercism configure --token=a68ddf44-46f9-44ae-af5b-51cddb6a5a49
-
-do not share the token
-remove token if you have to share commands
