@@ -1,25 +1,16 @@
-import java.security.InvalidParameterException
-
 //Object keyword
+//what is the exact difference between imperative and functional programming??
+//idk what the arrow does?
 
 object Hamming {
 
     fun compute(leftStrand: String, rightStrand: String): Int {
-
-        var i : Int = 0
-        var count : Int = 0
-
-        if (leftStrand.length != rightStrand.length) {
-            return throw InvalidParameterException("left and right strands must be of equal length")
+        if (leftStrand.length == rightStrand.length){
+            var count = 0;
+            leftStrand.zip(rightStrand) { leftStrand, rightStrand -> if (leftStrand != rightStrand) count++ }
+            return count
         } else {
-            while (i < leftStrand.length){
-                if (leftStrand[i] != rightStrand[i]){
-                    count++
-                }
-                i++
-            }
+            return throw IllegalArgumentException("left and right strands must be of equal length")
         }
-
-        return count
     }
 }
